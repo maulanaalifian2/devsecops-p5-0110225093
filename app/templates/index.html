@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Task Manager</h1>
+      <p class="subtitle">Kelola tugas Anda &middot; DevSecOps Praktikum 5</p>
+    </header>
+
+    <section class="stats" aria-label="Statistik">
+      <div class="stat"><span id="stat-total">0</span><small>Total</small></div>
+      <div class="stat"><span id="stat-active">0</span><small>Berjalan</small></div>
+      <div class="stat"><span id="stat-done">0</span><small>Selesai</small></div>
+    </section>
+
+    <form id="task-form" autocomplete="off">
+      <input id="title" type="text" maxlength="100" placeholder="Judul tugas (wajib)" required>
+      <textarea id="description" maxlength="500" rows="2" placeholder="Deskripsi (opsional)"></textarea>
+      <button type="submit" class="btn primary">+ Tambah Tugas</button>
+    </form>
+
+    <nav class="filters" aria-label="Filter">
+      <button class="filter active" data-filter="all">Semua</button>
+      <button class="filter" data-filter="active">Berjalan</button>
+      <button class="filter" data-filter="done">Selesai</button>
+    </nav>
+
+    <ul id="task-list" class="task-list"></ul>
+    <p id="empty" class="empty" hidden>Belum ada tugas. Tambahkan satu di atas.</p>
+  </main>
+
+  <div id="toast" class="toast" role="alert" hidden></div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
