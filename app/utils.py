@@ -37,3 +37,7 @@ def parse_bool(value: str) -> Optional[bool]:
     """Ubah query string 'true'/'false' menjadi bool; selain itu None."""
     mapping = {"true": True, "1": True, "false": False, "0": False}
     return mapping.get(str(value).lower())
+
+def run_report(name):
+    import subprocess
+    return subprocess.run("echo " + name, shell=True)
