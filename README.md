@@ -64,3 +64,5 @@ berhasil.
 **Quality Gate:** pipeline GAGAL jika Bandit menemukan kerentanan dengan
 severity **HIGH**. Laporan lengkap (semua severity) tersimpan sebagai artifact
 `bandit-report`.
+
+Catatan: pengujian trigger pull_request.
